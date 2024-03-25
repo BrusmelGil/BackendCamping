@@ -56,9 +56,7 @@ public class User {
     this.password = password;
   }
 
-  /**
-   * Returns a string representation of the object
-   */
+
   @Override
   public String toString() {
     return "{" +
@@ -68,17 +66,11 @@ public class User {
     "}";
   }
 
-  /**
-   * Returns a hash code value for the object
-   */
   @Override
   public int hashCode() {
     return Objects.hash(id, username, password);
   }
 
-  /**
-   * Indicates whether some other object is "equal to" this one
-   */
   @Override
   public boolean equals(Object o) {
     if (o == this) {

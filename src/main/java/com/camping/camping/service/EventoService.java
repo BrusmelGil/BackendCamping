@@ -15,19 +15,15 @@ public class EventoService {
   private EventoRepository EventoRepository;
 
   /**
-   * Applies the logic of the GET request, invoking the repository
-   * in order to retrieve the list of records stored in the database
-   * @return the whole list of objects present in the database
+   * @return
    */
   public ArrayList<Evento> get() {
     return (ArrayList<Evento>)this.EventoRepository.findAll();
   }
 
   /**
-   * Applies the logic of the POST request, invoking the repository
-   * in order to insert in the database the object passed through parameter
-   * @param evento object that is being created
-   * @return the saved object, returned by the save() method in the repository
+   * @param evento 
+   * @return 
    */
   public Evento post(Evento evento) {
     if(!isConflict(evento.getDesde(), evento.getHasta())) {
@@ -39,30 +35,24 @@ public class EventoService {
   }
 
   /**
-   * Applies the logic of the PUT request, invoking the repository
-   * in order to update in the database the object passed through parameter
-   * @param evento object that is being updated
-   * @param id Primary Key of the object to update
-   * @return the saved object, returned by the save() method in the repository
+   * @param evento 
+   * @param id 
+   * @return 
    */
   public Evento put(Evento evento, Integer id) {
     return EventoRepository.save(evento);
   }
 
   /**
-   * Applies the logic of the DELETE request, invoking the repository
-   * in order to delete from the database the specified object
-   * @param id Primary Key of the object to delete
+   * @param id
    */
   public void delete(Integer id) {
     EventoRepository.deleteById(id);
   }
 
   /**
-   * Applies the logic of the GET BY KEY request, invoking the repository
-   * in order to retrieve from the database the specified object
-   * @param id Primary Key of the object to retrieve
-   * @return the entity whose Primary Key matches the given key, or Optional#empty() if none found
+   * @param id 
+   * @return 
    */
   public Optional<Evento> getByKey(Integer id) {
     return EventoRepository.findById(id);

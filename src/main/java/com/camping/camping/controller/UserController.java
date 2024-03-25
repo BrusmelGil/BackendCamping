@@ -25,9 +25,7 @@ public class UserController {
   private UserService userService;
 
   /**
-   * Mapping of the GET operation endpoint
-   * HTTP Status code: 200 OK
-   * @return ArrayList of the database records, in JSON format
+   * @return 
    */
   @GetMapping(
       produces = "application/json"
@@ -37,10 +35,9 @@ public class UserController {
   }
 
   /**
-   * Mapping of the POST operation endpoint
-   * HTTP Status code: 201 CREATED or 409 CONFLICT
-   * @param User request body of the object to insert, in JSON format
-   * @return the object inserted in the database, in JSON format
+
+   * @param User
+   * @return
    */
   @PostMapping(
       consumes = "application/json"
@@ -55,11 +52,9 @@ public class UserController {
   }
 
   /**
-   * Mapping of the PUT operation endpoint
-   * HTTP Status code: 200 CREATED or 404 CONFLICT
-   * @param User request body of the object to update, in JSON format
-   * @param id path variable of the Primary Key of the object to be updated
-   * @return the object updated in the database, in JSON format
+   * @param User 
+   * @param id 
+   * @return
    */
   @PutMapping(
       value = "{id}",
@@ -75,10 +70,8 @@ public class UserController {
   }
 
   /**
-   * Mapping of the DELETE operation endpoint
-   * HTTP Status code: 204 NO CONTENT or 404 NOT FOUND
-   * @param id path variable of the Primary Key of the object to be deleted
-   * @return empty response body
+   * @param id
+   * @return 
    */
   @DeleteMapping("{id}")
   public ResponseEntity<Void> delete(@PathVariable("id") Integer id) {
@@ -91,11 +84,9 @@ public class UserController {
   }
 
   /**
-   * Mapping of the GET BY KEY operation endpoint
-   * HTTP Status code: 200 OK or 404 NOT FOUND
-   * @param User request body of the object to insert, in JSON format
-   * @param id path variable of the Primary Key of the object to be retrieved
-   * @return the object retrieved by its Primary Key from the database, in JSON format
+   * @param User 
+   * @param id 
+   * @return 
    */
   @GetMapping(
       value = "{id}",
